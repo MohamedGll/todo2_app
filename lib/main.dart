@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo2_app/app_theme_data.dart';
+import 'package:todo2_app/fcm.dart';
 import 'package:todo2_app/firebase_options.dart';
 import 'package:todo2_app/providers/auth_provider.dart';
 import 'package:todo2_app/providers/theme_provider.dart';
@@ -16,6 +17,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // await FirebaseFirestore.instance.disableNetwork();
+  Fcm.fcmInit();
   runApp(
     MultiProvider(
       providers: [
